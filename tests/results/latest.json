@@ -1,0 +1,746 @@
+{
+  "executed_at": "2026-11-01T20:38:43+09:00",
+  "target": {
+    "file": "chiikawa-merge.html",
+    "sha256": "20f672530e851d1d4e29637dfde00e8b38e947f7a3d7cfc8e5c69bfa5fb15fd4",
+    "commit": "d5fc39d"
+  },
+  "environment": {
+    "browser": "Google Chrome 156.0.8078.74",
+    "os": "Darwin 25.6.0"
+  },
+  "variants": [
+    "default",
+    "stored",
+    "nostorage"
+  ],
+  "summary": {
+    "total": 34,
+    "pass": 34,
+    "fail": 0,
+    "error": 0
+  },
+  "declared": [
+    {
+      "id": "TC-001",
+      "sr": [
+        "SR-001"
+      ],
+      "title": "캐릭터 10단계와 반지름 정의",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-002",
+      "sr": [
+        "SR-002"
+      ],
+      "title": "드롭 캐릭터는 0~4단계 중 무작위",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-003",
+      "sr": [
+        "SR-003"
+      ],
+      "title": "포인터 이동/누름으로 조준 위치 갱신",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-004",
+      "sr": [
+        "SR-003"
+      ],
+      "title": "포인터를 떼면 그 위치에 드롭",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-005",
+      "sr": [
+        "SR-004"
+      ],
+      "title": "←/→ 키로 조준 12px 이동",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-006",
+      "sr": [
+        "SR-004"
+      ],
+      "title": "Space/↓ 키로 드롭, 기본 동작 차단",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-007",
+      "sr": [
+        "SR-005"
+      ],
+      "title": "드롭 위치를 벽 안쪽으로 제한",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-008",
+      "sr": [
+        "SR-005"
+      ],
+      "title": "키 조준은 이동 범위 밖으로 누적되지 않음",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-009",
+      "sr": [
+        "SR-006",
+        "SR-012"
+      ],
+      "title": "드롭 후 550ms 쿨다운과 다음 캐릭터 승계",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-010",
+      "sr": [
+        "SR-007",
+        "SR-010"
+      ],
+      "title": "같은 단계가 닿으면 다음 단계 1개로 합체",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-011",
+      "sr": [
+        "SR-008"
+      ],
+      "title": "서로 다른 단계는 합체하지 않음",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-012",
+      "sr": [
+        "SR-009"
+      ],
+      "title": "한 캐릭터는 한 번만 합체 (3개 동시 접촉)",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-013",
+      "sr": [
+        "SR-010"
+      ],
+      "title": "단계별 합체 점수 (t+1)(t+2)/2",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-014",
+      "sr": [
+        "SR-011"
+      ],
+      "title": "최고 단계 두 개 합체 시 소멸 + 200점 보너스",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-015",
+      "sr": [
+        "SR-019"
+      ],
+      "title": "합체 이펙트 (파티클 14개 + 링)",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-016",
+      "sr": [
+        "SR-012"
+      ],
+      "title": "HUD에 점수·최고 기록·다음 캐릭터 표시",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-017",
+      "sr": [
+        "SR-013"
+      ],
+      "title": "저장된 최고 기록을 시작 시 불러옴",
+      "variants": [
+        "stored"
+      ]
+    },
+    {
+      "id": "TC-018",
+      "sr": [
+        "SR-013"
+      ],
+      "title": "게임 오버 시 최고 기록 갱신·저장",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-019",
+      "sr": [
+        "SR-013"
+      ],
+      "title": "저장소 사용 불가 환경에서도 정상 동작",
+      "variants": [
+        "nostorage"
+      ]
+    },
+    {
+      "id": "TC-020",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "위험선 초과 상태 2.2초 지속 시 게임 오버",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-021",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "생성 1.2초 이내 캐릭터는 판정 제외",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-022",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "움직이는 캐릭터(속도≥1.5)는 판정 제외",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-023",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "위험 해소 시 타이머가 2배 속도로 감소",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-024",
+      "sr": [
+        "SR-015"
+      ],
+      "title": "게임 오버 화면과 진행 정지",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-025",
+      "sr": [
+        "SR-016"
+      ],
+      "title": "다시 하기로 초기 상태 복귀",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-026",
+      "sr": [
+        "SR-017"
+      ],
+      "title": "화면 크기에 맞춘 비율 유지 스케일과 DPR 대응",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-027",
+      "sr": [
+        "SR-018"
+      ],
+      "title": "단일 파일 구성 (엔진·이미지 내장)",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-028",
+      "sr": [
+        "SR-018"
+      ],
+      "title": "오프라인(폰트 미수신)에서도 시작·렌더링",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-029",
+      "sr": [
+        "SR-019"
+      ],
+      "title": "이미지 미로딩 시 색상 원으로 대체",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-030",
+      "sr": [
+        "SR-020"
+      ],
+      "title": "하단 진화 단계 10종 표시",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-031",
+      "sr": [
+        "SR-021"
+      ],
+      "title": "위험선 표시 및 위험 시 강조",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-032",
+      "sr": [
+        "SR-022"
+      ],
+      "title": "프레임 간격 33ms 상한",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-033",
+      "sr": [
+        "SR-022"
+      ],
+      "title": "requestAnimationFrame 기반 연속 루프",
+      "variants": [
+        "default"
+      ]
+    },
+    {
+      "id": "TC-034",
+      "sr": [
+        "SR-023"
+      ],
+      "title": "모바일 확대/스크롤/선택 방지",
+      "variants": [
+        "default"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "TC-001",
+      "sr": [
+        "SR-001"
+      ],
+      "title": "캐릭터 10단계와 반지름 정의",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-002",
+      "sr": [
+        "SR-002"
+      ],
+      "title": "드롭 캐릭터는 0~4단계 중 무작위",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-003",
+      "sr": [
+        "SR-003"
+      ],
+      "title": "포인터 이동/누름으로 조준 위치 갱신",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-004",
+      "sr": [
+        "SR-003"
+      ],
+      "title": "포인터를 떼면 그 위치에 드롭",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-005",
+      "sr": [
+        "SR-004"
+      ],
+      "title": "←/→ 키로 조준 12px 이동",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-006",
+      "sr": [
+        "SR-004"
+      ],
+      "title": "Space/↓ 키로 드롭, 기본 동작 차단",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 600
+    },
+    {
+      "id": "TC-007",
+      "sr": [
+        "SR-005"
+      ],
+      "title": "드롭 위치를 벽 안쪽으로 제한",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 600
+    },
+    {
+      "id": "TC-008",
+      "sr": [
+        "SR-005"
+      ],
+      "title": "키 조준은 이동 범위 밖으로 누적되지 않음",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-009",
+      "sr": [
+        "SR-006",
+        "SR-012"
+      ],
+      "title": "드롭 후 550ms 쿨다운과 다음 캐릭터 승계",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 650
+    },
+    {
+      "id": "TC-010",
+      "sr": [
+        "SR-007",
+        "SR-010"
+      ],
+      "title": "같은 단계가 닿으면 다음 단계 1개로 합체",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-011",
+      "sr": [
+        "SR-008"
+      ],
+      "title": "서로 다른 단계는 합체하지 않음",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-012",
+      "sr": [
+        "SR-009"
+      ],
+      "title": "한 캐릭터는 한 번만 합체 (3개 동시 접촉)",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-013",
+      "sr": [
+        "SR-010"
+      ],
+      "title": "단계별 합체 점수 (t+1)(t+2)/2",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-014",
+      "sr": [
+        "SR-011"
+      ],
+      "title": "최고 단계 두 개 합체 시 소멸 + 200점 보너스",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-015",
+      "sr": [
+        "SR-019"
+      ],
+      "title": "합체 이펙트 (파티클 14개 + 링)",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-016",
+      "sr": [
+        "SR-012"
+      ],
+      "title": "HUD에 점수·최고 기록·다음 캐릭터 표시",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-017",
+      "sr": [
+        "SR-013"
+      ],
+      "title": "저장된 최고 기록을 시작 시 불러옴",
+      "variant": "stored",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-018",
+      "sr": [
+        "SR-013"
+      ],
+      "title": "게임 오버 시 최고 기록 갱신·저장",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-019",
+      "sr": [
+        "SR-013"
+      ],
+      "title": "저장소 사용 불가 환경에서도 정상 동작",
+      "variant": "nostorage",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-020",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "위험선 초과 상태 2.2초 지속 시 게임 오버",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-021",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "생성 1.2초 이내 캐릭터는 판정 제외",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-022",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "움직이는 캐릭터(속도≥1.5)는 판정 제외",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-023",
+      "sr": [
+        "SR-014"
+      ],
+      "title": "위험 해소 시 타이머가 2배 속도로 감소",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-024",
+      "sr": [
+        "SR-015"
+      ],
+      "title": "게임 오버 화면과 진행 정지",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-025",
+      "sr": [
+        "SR-016"
+      ],
+      "title": "다시 하기로 초기 상태 복귀",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-026",
+      "sr": [
+        "SR-017"
+      ],
+      "title": "화면 크기에 맞춘 비율 유지 스케일과 DPR 대응",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-027",
+      "sr": [
+        "SR-018"
+      ],
+      "title": "단일 파일 구성 (엔진·이미지 내장)",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-028",
+      "sr": [
+        "SR-018"
+      ],
+      "title": "오프라인(폰트 미수신)에서도 시작·렌더링",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-029",
+      "sr": [
+        "SR-019"
+      ],
+      "title": "이미지 미로딩 시 색상 원으로 대체",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-030",
+      "sr": [
+        "SR-020"
+      ],
+      "title": "하단 진화 단계 10종 표시",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-031",
+      "sr": [
+        "SR-021"
+      ],
+      "title": "위험선 표시 및 위험 시 강조",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-032",
+      "sr": [
+        "SR-022"
+      ],
+      "title": "프레임 간격 33ms 상한",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-033",
+      "sr": [
+        "SR-022"
+      ],
+      "title": "requestAnimationFrame 기반 연속 루프",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    },
+    {
+      "id": "TC-034",
+      "sr": [
+        "SR-023"
+      ],
+      "title": "모바일 확대/스크롤/선택 방지",
+      "variant": "default",
+      "status": "pass",
+      "detail": "",
+      "ms": 0
+    }
+  ],
+  "screenshot": "tests/results/screenshot.png"
+}
