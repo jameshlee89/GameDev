@@ -146,8 +146,9 @@ cvs.addEventListener('pointermove', ev => { aimX = pointerX(ev); });
 cvs.addEventListener('pointerdown', ev => { aimX = pointerX(ev); cvs.setPointerCapture(ev.pointerId); });
 cvs.addEventListener('pointerup', ev => { aimX = pointerX(ev); drop(); });
 addEventListener('keydown', ev => {
-  if (ev.key === 'ArrowLeft') aimX -= 12;
-  else if (ev.key === 'ArrowRight') aimX += 12;
+  const r = RADII[current];
+  if (ev.key === 'ArrowLeft') aimX = Math.max(BOX_L + r, Math.min(BOX_R - r, aimX) - 12);
+  else if (ev.key === 'ArrowRight') aimX = Math.min(BOX_R - r, Math.max(BOX_L + r, aimX) + 12);
   else if (ev.key === ' ' || ev.key === 'ArrowDown') { ev.preventDefault(); drop(); }
 });
 document.getElementById('retry').onclick = () => { Composite.clear(world, false); Engine.clear(engine); init(); };
